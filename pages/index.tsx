@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Head>
         <title>Sandbox</title>
-        <meta name="description" content="Maharsh's Sandbox" />
+        <meta name="description" content="Sandbox Page" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
