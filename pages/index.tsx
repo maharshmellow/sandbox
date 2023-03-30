@@ -14,12 +14,9 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
-            Sandbox Website |&nbsp;
-            <code className={styles.code}>Coming Soon</code>
+            <Link href="/proximity">Proximity</Link>
           </p>
         </div>
-
-        <Link href="/demo">Demo Page</Link>
       </main>
     </>
   );
