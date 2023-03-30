@@ -11,9 +11,9 @@ interface ButtonProps {
 
 const DebugText = styled.div`
   text-align: center;
-  color: white;
+  color: rgb(var(--background-rgb));
   padding: 15px;
-  background-color: black;
+  background-color: rgb(var(--foreground-rgb));
   position: absolute;
   width: 100%;
 `;
@@ -27,9 +27,9 @@ const Element = styled.div<ButtonProps>`
   place-self: center;
   font-size: 15px;
   scale: ${(props) => props.scale};
-  background-color: black;
+  background-color: rgb(var(--foreground-rgb));
   padding: 25px;
-  color: white;
+  color: rgb(var(--background-rgb));
 `;
 
 function calculateDistance(elem: HTMLDivElement | null, mouseX: number, mouseY: number) {
