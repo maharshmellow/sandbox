@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useEffect, useRef, useState } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
+import { useMousePosition } from './utils/hooks/useMousePosition';
 
 const MIN_SCALE = 1.0;
 const MAX_SCALE = 1.3;
@@ -49,17 +50,12 @@ export function ProximityDiv() {
   const proximityElement = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState<number>(MIN_SCALE);
 
-  useEffect(() => {
-    const handleMouseMove = (event: { clientX: number; clientY: number }) => {
-      const distance = calculateDistance(proximityElement.current, event.clientX, event.clientY);
-      setScale(Math.max(MIN_SCALE, MAX_SCALE - distance / 1500));
-    };
+  const mousePosition = useMousePosition();
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+  useEffect(() => {
+    const distance = calculateDistance(proximityElement.current, mousePosition.x, mousePosition.y);
+    setScale(Math.max(MIN_SCALE, MAX_SCALE - distance / 1500));
+  }, [mousePosition]);
 
   return (
     <>
