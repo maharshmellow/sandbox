@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { useMousePosition } from './utils/hooks/useMousePosition';
+import { useMousePosition } from '../utils/hooks/useMousePosition';
 
 const MIN_SCALE = 1.0;
 const MAX_SCALE = 1.3;
