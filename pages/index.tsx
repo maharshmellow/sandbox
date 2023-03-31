@@ -33,6 +33,9 @@ export default function Home() {
         <Link href="/proximity" passHref>
           <StyledLink>Proximity</StyledLink>
         </Link>
+        <Link href="/404" passHref>
+          <StyledLink>404 Page</StyledLink>
+        </Link>
       </Container>
     </>
   );
