@@ -6,7 +6,7 @@ const Container = styled.div`
   padding: 100px;
 `;
 
-const Project = styled.div`
+const StyledLink = styled.div`
   font-family: var(--font-mono);
   padding: 20px;
   transition: 0.2s;
@@ -30,12 +30,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
-        <Project>
-          <Link href="/proximity">Proximity</Link>
-        </Project>
-        {/* <Project>
-          <Link href="/proximity">Proximity</Link>
-        </Project> */}
+        <Link href="/proximity" passHref>
+          <StyledLink>Proximity</StyledLink>
+        </Link>
       </Container>
     </>
   );
