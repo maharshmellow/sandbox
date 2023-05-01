@@ -20,10 +20,9 @@ const slideUp = keyframes`
 `;
 
 const TitleContainer = styled.div`
-  // background-color: blue;
   text-align: center;
-  margin: auto;
-  font-size: 60px;
+  margin: auto; // to center
+  font-size: 30px;
   font-weight: 600;
 `;
 
@@ -35,9 +34,8 @@ const TitleChar = styled.span<{ index: number }>`
   animation-delay: ${(props) => props.index * 0.02}s;
 `;
 
-const Subtext = styled.h3`
+const Subtext = styled.h4`
   place-self: center;
-  color: black;
   font-weight: 500;
   opacity: 0;
   animation: ${slideUp} 0.5s ease-in-out forwards 1.5s;
@@ -67,7 +65,7 @@ export default function TextAnimationDemo() {
       <main>
         <Container>
           <AnimatedText text="Arc Design Studio." />
-          <Subtext>Scroll to see our projects</Subtext>
+          <Subtext>Each character is animated individually</Subtext>
         </Container>
       </main>
     </>
