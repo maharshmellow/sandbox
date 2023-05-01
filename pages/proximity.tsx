@@ -38,7 +38,8 @@ function calculateDistance(elem: HTMLDivElement | null, mouseX: number, mouseY: 
     return Math.floor(
       Math.sqrt(
         Math.pow(mouseX - (elem.offsetLeft + elem.clientWidth / 2), 2) +
-          Math.pow(mouseY - (elem.offsetTop + elem.clientHeight / 2), 2),
+          // neee to add pageYOffset so that this function works even after scrolling
+          Math.pow(mouseY + window.pageYOffset - (elem.offsetTop + elem.clientHeight / 2), 2),
       ),
     );
   }
