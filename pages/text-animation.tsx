@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { ReactElement, ReactNode, useEffect, useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const Container = styled.div`

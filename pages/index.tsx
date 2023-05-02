@@ -36,6 +36,9 @@ export default function Home() {
         <Link href="/text-animation" passHref>
           <StyledLink>Text Animation</StyledLink>
         </Link>
+        <Link href="/sticky-content" passHref>
+          <StyledLink>Sticky Content</StyledLink>
+        </Link>
         <Link href="/404" passHref>
           <StyledLink>404 Page</StyledLink>
         </Link>
