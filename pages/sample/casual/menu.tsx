@@ -96,7 +96,7 @@ export default function CasualRestaurantMenu() {
               <MenuSectionTitle>SMALL PLATES</MenuSectionTitle>
               <MenuItems>
                 <MenuItem>
-                  <MenuItemPrice>$14</MenuItemPrice>
+                  <MenuItemPrice>$15</MenuItemPrice>
                   <MenuItemTitle>GYOZA</MenuItemTitle>
                   <MenuItemDescription>Pan-fried pork and cabbage dumplings</MenuItemDescription>
                 </MenuItem>
@@ -106,12 +106,12 @@ export default function CasualRestaurantMenu() {
                   <MenuItemDescription>Seared shishito peppers with salt</MenuItemDescription>
                 </MenuItem>
                 <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
+                  <MenuItemPrice>$18</MenuItemPrice>
                   <MenuItemTitle>BAO</MenuItemTitle>
                   <MenuItemDescription>Braised pork belly, cucumber, hoisin</MenuItemDescription>
                 </MenuItem>
                 <MenuItem>
-                  <MenuItemPrice>$17</MenuItemPrice>
+                  <MenuItemPrice>$18</MenuItemPrice>
                   <MenuItemTitle>TAKOYAKI</MenuItemTitle>
                   <MenuItemDescription>
                     Octopus, beni shoga, bonito, and scallion
@@ -123,28 +123,28 @@ export default function CasualRestaurantMenu() {
               <MenuSectionTitle>RAMEN</MenuSectionTitle>
               <MenuItems>
                 <MenuItem>
-                  <MenuItemPrice>$14</MenuItemPrice>
+                  <MenuItemPrice>$16</MenuItemPrice>
                   <MenuItemTitle>SHIO</MenuItemTitle>
                   <MenuItemDescription>
                     Salt broth, chashu, scaillion, egg, nori, straight noodles
                   </MenuItemDescription>
                 </MenuItem>
                 <MenuItem>
-                  <MenuItemPrice>$15</MenuItemPrice>
+                  <MenuItemPrice>$18</MenuItemPrice>
                   <MenuItemTitle>SHOYU</MenuItemTitle>
                   <MenuItemDescription>
                     Soy broth, chashu, scallion, egg, nori, curly noodles
                   </MenuItemDescription>
                 </MenuItem>
                 <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
+                  <MenuItemPrice>$18</MenuItemPrice>
                   <MenuItemTitle>MISO</MenuItemTitle>
                   <MenuItemDescription>
                     Miso broth, chashu, corn, bamboo, egg, scallion, nori, curly noodles
                   </MenuItemDescription>
                 </MenuItem>
                 <MenuItem>
-                  <MenuItemPrice>$17</MenuItemPrice>
+                  <MenuItemPrice>$20</MenuItemPrice>
                   <MenuItemTitle>TONKOTSU</MenuItemTitle>
                   <MenuItemDescription>
                     Pork broth, chashu, bamboo, scallion, egg, nori, sesame oil, straight noodles
@@ -157,21 +157,21 @@ export default function CasualRestaurantMenu() {
               <MenuSectionTitle>+ ADD-ONS</MenuSectionTitle>
               <MenuItems>
                 <MenuItem>
-                  <MenuItemPrice>$14</MenuItemPrice>
+                  <MenuItemPrice>$2</MenuItemPrice>
                   <MenuItemTitle>TOPPINGS</MenuItemTitle>
                   <MenuItemDescription>
                     Scallion, sesame seeds, chili oil, nori, beni shoga, garlic paste
                   </MenuItemDescription>
                 </MenuItem>
                 <MenuItem>
-                  <MenuItemPrice>$15</MenuItemPrice>
+                  <MenuItemPrice>$3</MenuItemPrice>
                   <MenuItemTitle>PROTEIN</MenuItemTitle>
                   <MenuItemDescription>
                     Poached egg, soft-boiled egg, chashu, chicken, tofu, naruto
                   </MenuItemDescription>
                 </MenuItem>
                 <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
+                  <MenuItemPrice>$2</MenuItemPrice>
                   <MenuItemTitle>VEGETABLES</MenuItemTitle>
                   <MenuItemDescription>
                     Bean sprouts, bok choy, spinach, enoki, bamboo, cabbage, corn
@@ -184,42 +184,42 @@ export default function CasualRestaurantMenu() {
               <MenuSectionTitle>DRINKS</MenuSectionTitle>
               <MenuItems>
                 <MenuItem>
-                  <MenuItemPrice>$14</MenuItemPrice>
+                  <MenuItemPrice>$8</MenuItemPrice>
                   <MenuItemTitle>SAKE</MenuItemTitle>
                   <MenuItemDescription>Junmai daiginjo-shu</MenuItemDescription>
                 </MenuItem>
                 <MenuItem>
-                  <MenuItemPrice>$15</MenuItemPrice>
-                  <MenuItemTitle>GENMAICHA</MenuItemTitle>
-                  <MenuItemDescription>Green tea with roasted brown rice</MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
+                  <MenuItemPrice>$7</MenuItemPrice>
                   <MenuItemTitle>BEER</MenuItemTitle>
                   <MenuItemDescription>Komugi </MenuItemDescription>
                 </MenuItem>
                 <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
-                  <MenuItemTitle>HOJICHA</MenuItemTitle>
-                  <MenuItemDescription>Roasted green tea</MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
-                  <MenuItemTitle>UMESHU</MenuItemTitle>
-                  <MenuItemDescription>Plum wine</MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
-                  <MenuItemTitle>PU-ERH</MenuItemTitle>
-                  <MenuItemDescription>Fermented black tea</MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
+                  <MenuItemPrice>$9</MenuItemPrice>
                   <MenuItemTitle>APEROL SPRITZ</MenuItemTitle>
                   <MenuItemDescription>Prosecco, aperol, tonic, yuzu</MenuItemDescription>
                 </MenuItem>
                 <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
+                  <MenuItemPrice>$9</MenuItemPrice>
+                  <MenuItemTitle>UMESHU</MenuItemTitle>
+                  <MenuItemDescription>Plum wine</MenuItemDescription>
+                </MenuItem>
+                <MenuItem>
+                  <MenuItemPrice>$5</MenuItemPrice>
+                  <MenuItemTitle>HOJICHA</MenuItemTitle>
+                  <MenuItemDescription>Roasted green tea</MenuItemDescription>
+                </MenuItem>
+                <MenuItem>
+                  <MenuItemPrice>$5</MenuItemPrice>
+                  <MenuItemTitle>PU-ERH</MenuItemTitle>
+                  <MenuItemDescription>Fermented black tea</MenuItemDescription>
+                </MenuItem>
+                <MenuItem>
+                  <MenuItemPrice>$5</MenuItemPrice>
+                  <MenuItemTitle>GENMAICHA</MenuItemTitle>
+                  <MenuItemDescription>Green tea with roasted brown rice</MenuItemDescription>
+                </MenuItem>
+                <MenuItem>
+                  <MenuItemPrice>$5</MenuItemPrice>
                   <MenuItemTitle>EARL GREY</MenuItemTitle>
                   <MenuItemDescription>Black tea with bergamot</MenuItemDescription>
                 </MenuItem>
