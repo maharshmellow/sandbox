@@ -129,7 +129,7 @@ export function HamburgerButton() {
             <Link href="/sample/casual">HOME</Link>
             <Link href="/sample/casual/menu">MENU</Link>
             <Link href="/sample/casual/about">ABOUT</Link>
-            <Link href="/sample/casual">CONTACT</Link>
+            <Link href="/sample/casual/contact">CONTACT</Link>
           </ModalContent>
         </Modal>
       </Hamburger>
@@ -151,7 +151,7 @@ export default function NavBar() {
         <LargeNavBarCenter>LOGO</LargeNavBarCenter>
         <LargeNavBarRight>
           <div>
-            <Link href="/sample/casual">CONTACT</Link>
+            <Link href="/sample/casual/contact">CONTACT</Link>
           </div>
         </LargeNavBarRight>
       </LargeNavBar>

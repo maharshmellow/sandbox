@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 import { Azeret_Mono } from 'next/font/google';
-import NavBar from './NavBar';
+import NavBar from '../../../components/sample/casual/NavBar';
 
 // swap allows it to load during development as well
 const azeretMono = Azeret_Mono({ subsets: ['latin'], display: 'swap' });

@@ -46,7 +46,7 @@ const Title = styled.div`
 const ImageWrapper = styled.div`\
   padding-top: 100px;
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   margin: auto;
   text-align: center;
   .image {
@@ -56,25 +56,13 @@ const ImageWrapper = styled.div`\
   }
 `;
 
-const Footer = styled.div`
+const Divider = styled.div`\
   padding-top: 100px;
+  margin: auto;
   text-align: center;
-
-  > a {
-    font-weight: 600;
-    text-decoration: underline;
-  }
-  > .dark {
-    color: #cccccc;
-    font-size: 10px;
-
-    > a {
-      text-decoration: underline;
-    }
-  }
 `;
 
-export default function CasualRestaurant() {
+export default function CasualRestaurantContact() {
   return (
     <>
       <Head>
@@ -87,34 +75,39 @@ export default function CasualRestaurant() {
         <Container className={azeretMono.className}>
           <NavBar />
           <ContentContainer>
-            <Title>
-              555 Wellington St.
-              <br />
-              Hong Kong
-            </Title>
             <ImageWrapper>
               <Image
                 className={'image'}
-                src="/images/sample/casual/hero.jpg"
+                src="/images/sample/casual/location.png"
                 fill={true}
-                alt="Picture of the author"
+                alt="Map with the location of the restaurant"
               />
             </ImageWrapper>
+            <Title>
+              555 Wellington St.
+              <br />
+              Central, HK
+              <br />+ 852 1234 5678
+            </Title>
+
+            <Divider>
+              <Image
+                className={'image'}
+                src="/images/sample/casual/divider.png"
+                width={100}
+                height={50}
+                alt="Divider"
+              />
+            </Divider>
+
+            <br />
+            <br />
 
             <Title>
               9:00AM - 7:00PM
               <br />
               Every day
             </Title>
-
-            <Footer>
-              Made by <Link href={'https://www.maharsh.net'}>Maharsh Patel</Link> <br />
-              <div className={'dark'}>
-                {' '}
-                (with design inspiration from{' '}
-                <Link href={'https://motto-demo.squarespace.com/'}>here</Link>)
-              </div>
-            </Footer>
           </ContentContainer>
         </Container>
       </main>
