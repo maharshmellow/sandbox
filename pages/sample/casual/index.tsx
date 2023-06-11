@@ -38,7 +38,7 @@ const Title = styled.div`
   letter-spacing: -0.05em;
   padding-top: 50px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 700px) {
     font-size: 30px;
   }
 `;
