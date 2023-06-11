@@ -10,6 +10,9 @@ const Container = styled.div`
   min-height: 120vh;
   padding: 75px;
 
+  background-color: white;
+  color: black;
+
   letter-spacing: -0.05em;
 
   @media (max-width: 700px) {
