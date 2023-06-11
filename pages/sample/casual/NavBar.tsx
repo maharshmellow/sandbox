@@ -32,7 +32,8 @@ const Center = styled.div`
   flex: 1 1 0px;
   width: 0;
   justify-content: center;
-  background-color: yellow;
+  background-color: black;
+  color: white;
 `;
 const Right = styled.div`
   display: flex;
@@ -51,15 +52,15 @@ export default function NavBar() {
     <Container className={azeretMono.className}>
       <Left>
         <div>
-          <Link href="/">HOME</Link>
-          <Link href="/">MENU</Link>
-          <Link href="/">ABOUT</Link>
+          <Link href="/sample/casual">HOME</Link>
+          <Link href="/sample/casual/menu">MENU</Link>
+          <Link href="/sample/casual/about">ABOUT</Link>
         </div>
       </Left>
       <Center>LOGO</Center>
       <Right>
         <div>
-          <Link href="/">CONTACT</Link>
+          <Link href="/sample/casual">CONTACT</Link>
         </div>
       </Right>
     </Container>

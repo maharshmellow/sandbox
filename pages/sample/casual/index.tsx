@@ -2,14 +2,16 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import { Azeret_Mono } from 'next/font/google';
 import NavBar from './NavBar';
+import Image from 'next/image';
+import Link from 'next/link';
 
 // swap allows it to load during development as well
 const azeretMono = Azeret_Mono({ subsets: ['latin'], display: 'swap' });
 
 const Container = styled.div`
   border: 20px rgb(255, 229, 0) solid;
-  min-height: 120vh;
   padding: 75px;
+  min-height: 100vh;
 
   background-color: white;
   color: black;
@@ -21,65 +23,58 @@ const Container = styled.div`
   }
 `;
 
-const Menu = styled.div`
+const ContentContainer = styled.div`
   width: 90%;
   max-width: 1200px;
-
-  border-radius: 10px;
   margin: auto;
   margin-top: 150px;
 `;
 
-const MenuSection = styled.div``;
-
-const MenuSectionTitle = styled.div`
-  font-size: 40px;
+const Title = styled.div`
+  font-size: 55px;
   font-weight: 600;
+  text-align: center;
+  line-height: 1.5;
   letter-spacing: -0.05em;
+  padding-top: 50px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     font-size: 30px;
   }
 `;
 
-const MenuItems = styled.div`
-  margin: 0 auto;
-  display: grid;
-  gap: 2rem;
-  margin-top: 50px;
-  margin-bottom: 100px;
-
-  @media (min-width: 900px) {
-    column-gap: 10rem;
-    grid-template-columns: repeat(2, 1fr);
+const ImageWrapper = styled.div`\
+  padding-top: 100px;
+  width: 60vw;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  .image {
+    width: 100% !important;
+    position: relative !important;
+    margin: auto !important;
   }
-
-  // @media (min-width: 1200px) {
-  //   column-gap: 10rem;
-  //   grid-template-columns: repeat(3, 1fr);
-  // }
 `;
 
-const MenuItem = styled.div`
-  width: 100%;
-  line-height: 1.2em;
-  padding-bottom: 2em;
+const Footer = styled.div`
+  padding-top: 100px;
+  text-align: center;
+
+  > a {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  > .dark {
+    color: #cccccc;
+    font-size: 10px;
+
+    > a {
+      text-decoration: underline;
+    }
+  }
 `;
 
-const MenuItemPrice = styled.div`
-  float: right;
-`;
-
-const MenuItemTitle = styled.div`
-  font-size: 1.1em;
-  font-weight: 700;
-`;
-
-const MenuItemDescription = styled.div`
-  font-size: 0.9em;
-`;
-
-export default function CasualRestaurant() {
+export default function CasualRestaurantMenu() {
   return (
     <>
       <Head>
@@ -91,141 +86,36 @@ export default function CasualRestaurant() {
       <main>
         <Container className={azeretMono.className}>
           <NavBar />
-          <Menu>
-            <MenuSection>
-              <MenuSectionTitle>SMALL PLATES</MenuSectionTitle>
-              <MenuItems>
-                <MenuItem>
-                  <MenuItemPrice>$14</MenuItemPrice>
-                  <MenuItemTitle>GYOZA</MenuItemTitle>
-                  <MenuItemDescription>Pan-fried pork and cabbage dumplings</MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$15</MenuItemPrice>
-                  <MenuItemTitle>SHISHITO</MenuItemTitle>
-                  <MenuItemDescription>Seared shishito peppers with salt</MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
-                  <MenuItemTitle>BAO</MenuItemTitle>
-                  <MenuItemDescription>Braised pork belly, cucumber, hoisin</MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$17</MenuItemPrice>
-                  <MenuItemTitle>TAKOYAKI</MenuItemTitle>
-                  <MenuItemDescription>
-                    Octopus, beni shoga, bonito, and scallion
-                  </MenuItemDescription>
-                </MenuItem>
-              </MenuItems>
-            </MenuSection>
-            <MenuSection>
-              <MenuSectionTitle>RAMEN</MenuSectionTitle>
-              <MenuItems>
-                <MenuItem>
-                  <MenuItemPrice>$14</MenuItemPrice>
-                  <MenuItemTitle>SHIO</MenuItemTitle>
-                  <MenuItemDescription>
-                    Salt broth, chashu, scaillion, egg, nori, straight noodles
-                  </MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$15</MenuItemPrice>
-                  <MenuItemTitle>SHOYU</MenuItemTitle>
-                  <MenuItemDescription>
-                    Soy broth, chashu, scallion, egg, nori, curly noodles
-                  </MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
-                  <MenuItemTitle>MISO</MenuItemTitle>
-                  <MenuItemDescription>
-                    Miso broth, chashu, corn, bamboo, egg, scallion, nori, curly noodles
-                  </MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$17</MenuItemPrice>
-                  <MenuItemTitle>TONKOTSU</MenuItemTitle>
-                  <MenuItemDescription>
-                    Pork broth, chashu, bamboo, scallion, egg, nori, sesame oil, straight noodles
-                  </MenuItemDescription>
-                </MenuItem>
-              </MenuItems>
-            </MenuSection>
+          <ContentContainer>
+            <Title>
+              555 Wellington St.
+              <br />
+              Hong Kong
+            </Title>
+            <ImageWrapper>
+              <Image
+                className={'image'}
+                src="/images/sample/casual/hero.jpg"
+                fill={true}
+                alt="Picture of the author"
+              />
+            </ImageWrapper>
 
-            <MenuSection>
-              <MenuSectionTitle>+ ADD-ONS</MenuSectionTitle>
-              <MenuItems>
-                <MenuItem>
-                  <MenuItemPrice>$14</MenuItemPrice>
-                  <MenuItemTitle>TOPPINGS</MenuItemTitle>
-                  <MenuItemDescription>
-                    Scallion, sesame seeds, chili oil, nori, beni shoga, garlic paste
-                  </MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$15</MenuItemPrice>
-                  <MenuItemTitle>PROTEIN</MenuItemTitle>
-                  <MenuItemDescription>
-                    Poached egg, soft-boiled egg, chashu, chicken, tofu, naruto
-                  </MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
-                  <MenuItemTitle>VEGETABLES</MenuItemTitle>
-                  <MenuItemDescription>
-                    Bean sprouts, bok choy, spinach, enoki, bamboo, cabbage, corn
-                  </MenuItemDescription>
-                </MenuItem>
-              </MenuItems>
-            </MenuSection>
+            <Title>
+              9:00AM - 7:00PM
+              <br />
+              Every day
+            </Title>
 
-            <MenuSection>
-              <MenuSectionTitle>DRINKS</MenuSectionTitle>
-              <MenuItems>
-                <MenuItem>
-                  <MenuItemPrice>$14</MenuItemPrice>
-                  <MenuItemTitle>SAKE</MenuItemTitle>
-                  <MenuItemDescription>Junmai daiginjo-shu</MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$15</MenuItemPrice>
-                  <MenuItemTitle>GENMAICHA</MenuItemTitle>
-                  <MenuItemDescription>Green tea with roasted brown rice</MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
-                  <MenuItemTitle>BEER</MenuItemTitle>
-                  <MenuItemDescription>Komugi </MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
-                  <MenuItemTitle>HOJICHA</MenuItemTitle>
-                  <MenuItemDescription>Roasted green tea</MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
-                  <MenuItemTitle>UMESHU</MenuItemTitle>
-                  <MenuItemDescription>Plum wine</MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
-                  <MenuItemTitle>PU-ERH</MenuItemTitle>
-                  <MenuItemDescription>Fermented black tea</MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
-                  <MenuItemTitle>APEROL SPRITZ</MenuItemTitle>
-                  <MenuItemDescription>Prosecco, aperol, tonic, yuzu</MenuItemDescription>
-                </MenuItem>
-                <MenuItem>
-                  <MenuItemPrice>$16</MenuItemPrice>
-                  <MenuItemTitle>EARL GREY</MenuItemTitle>
-                  <MenuItemDescription>Black tea with bergamot</MenuItemDescription>
-                </MenuItem>
-              </MenuItems>
-            </MenuSection>
-          </Menu>
+            <Footer>
+              Made by <Link href={'https://www.maharsh.net'}>Maharsh Patel</Link> <br />
+              <div className={'dark'}>
+                {' '}
+                (with design inspiration from{' '}
+                <Link href={'https://motto-demo.squarespace.com/'}>here</Link>)
+              </div>
+            </Footer>
+          </ContentContainer>
         </Container>
       </main>
     </>
