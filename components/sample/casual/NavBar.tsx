@@ -66,10 +66,6 @@ const SmallNavBarLeft = styled.div`
   flex: 1 1 0px;
   width: 0;
   color: white;
-
-  > .logo {
-    width: 100px;
-  }
 `;
 
 const SmallNavBarRight = styled.div`
@@ -145,9 +141,9 @@ export function HamburgerButton() {
 
 export function Logo() {
   return (
-    <a href="/sample/casual">
-      <img className={'logo'} src="/images/sample/casual/logo.png" width={'150px'} alt="Logo" />
-    </a>
+    <Link href="/sample/casual">
+      <img className={'logo'} src="/images/sample/casual/logo.png" width={'125px'} alt="Logo" />
+    </Link>
   );
 }
 
