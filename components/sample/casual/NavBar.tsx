@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Azeret_Mono } from 'next/font/google';
@@ -84,7 +85,7 @@ const SmallNavBarRight = styled.div`
 `;
 
 const Hamburger = styled.div`
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
 `;
 
@@ -143,8 +144,11 @@ export function HamburgerButton() {
 }
 
 export function Logo() {
-  // eslint-disable-next-line @next/next/no-img-element
-  return <img className={'logo'} src="/images/sample/casual/logo.png" width={'150px'} alt="Logo" />;
+  return (
+    <a href="/sample/casual">
+      <img className={'logo'} src="/images/sample/casual/logo.png" width={'150px'} alt="Logo" />
+    </a>
+  );
 }
 
 export default function NavBar() {
