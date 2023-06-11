@@ -9,6 +9,8 @@ const azeretMono = Azeret_Mono({ subsets: ['latin'], display: 'swap' });
 const Container = styled.div`
   max-width: 1300px;
   margin: auto;
+  font-weight: 500;
+  font-size: 15px;
 `;
 
 const LargeNavBar = styled.div`
@@ -42,7 +44,7 @@ const LargeNavBarCenter = styled.div`
   flex: 1 1 0px;
   width: 0;
   justify-content: center;
-  background-color: black;
+  // background-color: black;
   color: white;
 `;
 const LargeNavBarRight = styled.div`
@@ -62,8 +64,11 @@ const SmallNavBarLeft = styled.div`
   justify-content: space-between;
   flex: 1 1 0px;
   width: 0;
-  background-color: black;
   color: white;
+
+  > .logo {
+    width: 100px;
+  }
 `;
 
 const SmallNavBarRight = styled.div`
@@ -137,6 +142,11 @@ export function HamburgerButton() {
   );
 }
 
+export function Logo() {
+  // eslint-disable-next-line @next/next/no-img-element
+  return <img className={'logo'} src="/images/sample/casual/logo.png" width={'150px'} alt="Logo" />;
+}
+
 export default function NavBar() {
   return (
     <Container className={azeretMono.className}>
@@ -148,15 +158,17 @@ export default function NavBar() {
             <Link href="/sample/casual/about">ABOUT</Link>
           </div>
         </LargeNavBarLeft>
-        <LargeNavBarCenter>LOGO</LargeNavBarCenter>
+        <LargeNavBarCenter>
+          <Logo />
+        </LargeNavBarCenter>
         <LargeNavBarRight>
-          <div>
-            <Link href="/sample/casual/contact">CONTACT</Link>
-          </div>
+          <Link href="/sample/casual/contact">CONTACT</Link>
         </LargeNavBarRight>
       </LargeNavBar>
       <SmallNavBar>
-        <SmallNavBarLeft>LOGO</SmallNavBarLeft>
+        <SmallNavBarLeft>
+          <Logo />
+        </SmallNavBarLeft>
         <SmallNavBarRight>
           <HamburgerButton />
         </SmallNavBarRight>

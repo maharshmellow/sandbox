@@ -66,8 +66,8 @@ export default function CasualRestaurantContact() {
   return (
     <>
       <Head>
-        <title>Casual Restaurant</title>
-        <meta name="description" content="Casual Restaurant" />
+        <title>Casual Restaurant - Contact</title>
+        <meta name="description" content="Casual Restaurant - Contact" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -97,7 +97,7 @@ export default function CasualRestaurant() {
                 className={'image'}
                 src="/images/sample/casual/hero.jpg"
                 fill={true}
-                alt="Picture of the author"
+                alt="Picture of a bowl of ramen"
               />
             </ImageWrapper>
 
