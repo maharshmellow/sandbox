@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 import { Azeret_Mono } from 'next/font/google';
+import NavBar from './NavBar';
 
 // swap allows it to load during development as well
 const azeretMono = Azeret_Mono({ subsets: ['latin'], display: 'swap' });
@@ -89,7 +90,7 @@ export default function CasualRestaurant() {
       </Head>
       <main>
         <Container className={azeretMono.className}>
-          Casual Restaurant
+          <NavBar />
           <Menu>
             <MenuSection>
               <MenuSectionTitle>SMALL PLATES</MenuSectionTitle>
