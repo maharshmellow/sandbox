@@ -1,12 +1,9 @@
 import Head from 'next/head';
 import styled from 'styled-components';
-import { Azeret_Mono } from 'next/font/google';
 import NavBar from '../../../components/sample/casual/NavBar';
 import Image from 'next/image';
 import Link from 'next/link';
-
-// swap allows it to load during development as well
-const azeretMono = Azeret_Mono({ subsets: ['latin'], display: 'swap' });
+import AzeretFontContainer from '@/components/sample/casual/AzeretFontContainer';
 
 const Container = styled.div`
   border: 20px rgb(255, 229, 0) solid;
@@ -83,8 +80,8 @@ export default function CasualRestaurant() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <Container className={azeretMono.className}>
+      <AzeretFontContainer>
+        <Container>
           <NavBar />
           <ContentContainer>
             <Title>
@@ -98,6 +95,7 @@ export default function CasualRestaurant() {
                 src="/images/sample/casual/hero.jpg"
                 fill={true}
                 alt="Picture of a bowl of ramen"
+                priority={true}
               />
             </ImageWrapper>
 
@@ -117,7 +115,7 @@ export default function CasualRestaurant() {
             </Footer>
           </ContentContainer>
         </Container>
-      </main>
+      </AzeretFontContainer>
     </>
   );
 }

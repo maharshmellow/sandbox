@@ -1,11 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import { Azeret_Mono } from 'next/font/google';
+import styled from 'styled-components';
 import Link from 'next/link';
-
-// swap allows it to load during development as well
-const azeretMono = Azeret_Mono({ subsets: ['latin'], display: 'swap' });
+import AzeretFontContainer from './AzeretFontContainer';
 
 const Container = styled.div`
   max-width: 1300px;
@@ -149,30 +146,32 @@ export function Logo() {
 
 export default function NavBar() {
   return (
-    <Container className={azeretMono.className}>
-      <LargeNavBar>
-        <LargeNavBarLeft>
-          <div>
-            <Link href="/sample/casual">HOME</Link>
-            <Link href="/sample/casual/menu">MENU</Link>
-            <Link href="/sample/casual/about">ABOUT</Link>
-          </div>
-        </LargeNavBarLeft>
-        <LargeNavBarCenter>
-          <Logo />
-        </LargeNavBarCenter>
-        <LargeNavBarRight>
-          <Link href="/sample/casual/contact">CONTACT</Link>
-        </LargeNavBarRight>
-      </LargeNavBar>
-      <SmallNavBar>
-        <SmallNavBarLeft>
-          <Logo />
-        </SmallNavBarLeft>
-        <SmallNavBarRight>
-          <HamburgerButton />
-        </SmallNavBarRight>
-      </SmallNavBar>
-    </Container>
+    <AzeretFontContainer>
+      <Container>
+        <LargeNavBar>
+          <LargeNavBarLeft>
+            <div>
+              <Link href="/sample/casual">HOME</Link>
+              <Link href="/sample/casual/menu">MENU</Link>
+              <Link href="/sample/casual/about">ABOUT</Link>
+            </div>
+          </LargeNavBarLeft>
+          <LargeNavBarCenter>
+            <Logo />
+          </LargeNavBarCenter>
+          <LargeNavBarRight>
+            <Link href="/sample/casual/contact">CONTACT</Link>
+          </LargeNavBarRight>
+        </LargeNavBar>
+        <SmallNavBar>
+          <SmallNavBarLeft>
+            <Logo />
+          </SmallNavBarLeft>
+          <SmallNavBarRight>
+            <HamburgerButton />
+          </SmallNavBarRight>
+        </SmallNavBar>
+      </Container>
+    </AzeretFontContainer>
   );
 }
