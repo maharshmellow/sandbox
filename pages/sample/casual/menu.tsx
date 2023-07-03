@@ -13,8 +13,9 @@ const Container = styled.div`
 
   letter-spacing: -0.05em;
 
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     padding: 10px;
+    border: none;
   }
 `;
 
@@ -34,7 +35,7 @@ const MenuSectionTitle = styled.div`
   font-weight: 600;
   letter-spacing: -0.05em;
 
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     font-size: 30px;
   }
 `;

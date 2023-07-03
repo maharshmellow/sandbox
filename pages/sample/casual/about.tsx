@@ -14,8 +14,9 @@ const Container = styled.div`
 
   letter-spacing: -0.05em;
 
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     padding: 10px;
+    border: none;
   }
 `;
 
@@ -38,7 +39,7 @@ const Heading = styled.div`
   margin: auto;
   margin-top: 100px;
 
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     font-size: 20px;
     margin-top: 20px;
     width: 90%;

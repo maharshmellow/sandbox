@@ -13,14 +13,20 @@ const Container = styled.div`
 
 const LargeNavBar = styled.div`
   display: flex;
-  @media (max-width: 900px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
 
 const SmallNavBar = styled.div`
   display: flex;
-  @media (min-width: 900px) {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  padding: 10px 20px 10px 20px;
+  @media (min-width: 768px) {
     display: none;
   }
 `;
@@ -83,7 +89,7 @@ const Hamburger = styled.div`
 `;
 
 const Modal = styled.div<{ open: boolean }>`
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   background-color: rgb(255, 229, 0);
@@ -112,30 +118,6 @@ const ModalContent = styled.div`
   }
 `;
 
-export function HamburgerButton() {
-  const [open, setOpen] = React.useState(false);
-
-  return (
-    <>
-      <Hamburger
-        onClick={() => {
-          setOpen((prevOpen) => !prevOpen);
-        }}
-      >
-        &#9776;
-        <Modal open={open}>
-          <ModalContent>
-            <Link href="/sample/casual">HOME</Link>
-            <Link href="/sample/casual/menu">MENU</Link>
-            <Link href="/sample/casual/about">ABOUT</Link>
-            <Link href="/sample/casual/contact">CONTACT</Link>
-          </ModalContent>
-        </Modal>
-      </Hamburger>
-    </>
-  );
-}
-
 export function Logo() {
   return (
     <Link href="/sample/casual">
@@ -145,6 +127,12 @@ export function Logo() {
 }
 
 export default function NavBar() {
+  const [open, setOpen] = React.useState(false);
+
+  const toggleOpen = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
+
   return (
     <AzeretFontContainer>
       <Container>
@@ -168,9 +156,17 @@ export default function NavBar() {
             <Logo />
           </SmallNavBarLeft>
           <SmallNavBarRight>
-            <HamburgerButton />
+            <Hamburger onClick={toggleOpen}>&#9776;</Hamburger>
           </SmallNavBarRight>
         </SmallNavBar>
+        <Modal open={open} onClick={toggleOpen}>
+          <ModalContent>
+            <Link href="/sample/casual">HOME</Link>
+            <Link href="/sample/casual/menu">MENU</Link>
+            <Link href="/sample/casual/about">ABOUT</Link>
+            <Link href="/sample/casual/contact">CONTACT</Link>
+          </ModalContent>
+        </Modal>
       </Container>
     </AzeretFontContainer>
   );
