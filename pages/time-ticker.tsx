@@ -1,3 +1,4 @@
+// inspired by https://www.timezones.digital/
 import Head from 'next/head';
 import styled from 'styled-components';
 
@@ -8,7 +9,7 @@ type TickerProps = {
 const Card = styled.div`
   max-width: 600px;
   min-width: 300px;
-  height: 20vh;
+  // height: 20vh;
   // background-color: rgb(var(--foreground-rgb));
   border: 1px solid rgb(var(--foreground-rgb));
 
@@ -16,6 +17,8 @@ const Card = styled.div`
   margin: auto;
   margin-top: 300px;
   padding: 20px;
+  overflow: hidden;
+  position: relative;
 
   @media (max-width: 768px) {
     width: 90vw;
@@ -27,13 +30,13 @@ const TickerContainer = styled.div`
   height: 8px;
   margin-left: 5px;
   margin-right: 5px;
-  justify-content: space-between;
+  // justify-content: space-between;
 `;
 
 const Ticker = styled.div<TickerProps>`
   // border-left: 1px solid rgb(var(--foreground-rgb));
   border-left: ${(props) => (props.hourMark ? '1px solid #000000' : '1px solid #afafaf')};
-  // width: calc(1.0309278%); // 100 / 97 = 1.0309278 -> number of ticks in the day
+  width: calc(1.0309278%); // 100 / 97 = 1.0309278 -> number of ticks in the day
 `;
 
 const TickerLabelContainer = styled.div`
@@ -44,6 +47,30 @@ const TickerLabelContainer = styled.div`
   font-weight: 500px;
 `;
 const TickerLabel = styled.div``;
+
+const TimeSelectorBar = styled.div`
+  display: block;
+  color: black;
+  width: 1px;
+  background-color: black;
+  height: 100%;
+  position: absolute;
+  right: calc(4.3% + 97 * 0.94226804%); // (95.7% - 4.3%) / 97 stops = 0.94226804%
+  transform: translateX(50%);
+  // left: calc(20px + 16 * 5.6391753px); // 572px - 25px = 547px / 97 steps = 5.6391753px
+`;
+
+const DummyContent = styled.div`
+  height: 150px;
+`;
+
+const TimeContainer = styled.div`
+  position: absolute;
+  right: 20px;
+  left: 20px;
+  bottom: 16px;
+  // background-color: red;
+`;
 
 export function Tickers() {
   const ticks = [];
@@ -67,6 +94,10 @@ export function TickerLabels() {
   );
 }
 
+export function TimeSelector() {
+  return <TimeSelectorBar />;
+}
+
 export default function TimeTickerDemo() {
   return (
     <>
@@ -78,8 +109,12 @@ export default function TimeTickerDemo() {
       </Head>
       <main>
         <Card>
-          <Tickers />
-          <TickerLabels />
+          <TimeSelector />
+          <DummyContent />
+          <TimeContainer>
+            <Tickers />
+            <TickerLabels />
+          </TimeContainer>
         </Card>
       </main>
     </>
