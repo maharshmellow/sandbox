@@ -62,14 +62,6 @@ const Footer = styled.div`
     font-weight: 600;
     text-decoration: underline;
   }
-  > .dark {
-    color: #cccccc;
-    font-size: 10px;
-
-    > a {
-      text-decoration: underline;
-    }
-  }
 `;
 
 export default function CasualRestaurant() {
@@ -109,11 +101,6 @@ export default function CasualRestaurant() {
 
             <Footer>
               Made by <Link href={'https://www.maharsh.net'}>Maharsh Patel</Link> <br />
-              <div className={'dark'}>
-                {' '}
-                (with design inspiration from{' '}
-                <Link href={'https://motto-demo.squarespace.com/'}>here</Link>)
-              </div>
             </Footer>
           </ContentContainer>
         </Container>
