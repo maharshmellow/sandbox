@@ -23,6 +23,7 @@ const LargeNavBar = styled.div`
 const SmallNavBar = styled.div`
   display: flex;
   position: fixed;
+  z-index: 10;
   width: 100%;
   top: 0;
   left: 0;
