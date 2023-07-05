@@ -4,6 +4,7 @@ import NavBar from '../../../components/sample/casual/NavBar';
 import Image from 'next/image';
 import Link from 'next/link';
 import AzeretFontContainer from '@/components/sample/casual/AzeretFontContainer';
+import hero from '@/public/images/sample/casual/hero.jpg';
 
 const Container = styled.div`
   border: 20px rgb(255, 229, 0) solid;
@@ -41,16 +42,15 @@ const Title = styled.div`
   }
 `;
 
-const ImageWrapper = styled.div`\
+const ImageWrapper = styled.div`
+  display: flex;
+  justifycontent: center;
   padding-top: 100px;
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-  text-align: center;
   .image {
-    width: 100% !important;
     position: relative !important;
     margin: auto !important;
+    object-fit: contain;
+    max-width: 600px;
   }
 `;
 
@@ -93,10 +93,11 @@ export default function CasualRestaurant() {
             <ImageWrapper>
               <Image
                 className={'image'}
-                src="/images/sample/casual/hero.jpg"
+                src={hero}
                 fill={true}
                 alt="Picture of a bowl of ramen"
                 priority={true}
+                sizes="(min-width: 768px) 256px, (min-width: 1024px) 384px, 128px" // 128px used if width < 768px
               />
             </ImageWrapper>
 
