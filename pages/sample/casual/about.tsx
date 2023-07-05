@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import NavBar from '../../../components/sample/casual/NavBar';
 import Image from 'next/image';
 import AzeretFontContainer from '@/components/sample/casual/AzeretFontContainer';
+import about1 from '@/public/images/sample/casual/about1.jpg';
+import about2 from '@/public/images/sample/casual/about2.jpg';
+import about3 from '@/public/images/sample/casual/about3.jpg';
+import hero from '@/public/images/sample/casual/hero.jpg';
 
 const Container = styled.div`
   border: 20px rgb(255, 229, 0) solid;
@@ -46,15 +50,15 @@ const Heading = styled.div`
   }
 `;
 
-const WideImageWrapper = styled.div`\
-  padding-top: 100px;
-  width: 100%;
-  margin: auto;
+const WideImageWrapper = styled.div`
+  display: block;
   text-align: center;
+  padding-top: 100px;
   .image {
-    width: 100% !important;
     position: relative !important;
     margin: auto !important;
+    object-fit: contain;
+    max-width: 1536px;
   }
 `;
 
@@ -116,10 +120,11 @@ export default function CasualRestaurantAbout() {
             <WideImageWrapper>
               <Image
                 className={'image'}
-                src="/images/sample/casual/about1.jpg"
+                src={about1}
                 fill={true}
                 alt="Noodles"
                 priority={true}
+                sizes="(min-width: 768px) 512px, (min-width: 1024px) 1024px, 256px"
               />
             </WideImageWrapper>
 
@@ -146,9 +151,11 @@ export default function CasualRestaurantAbout() {
             <WideImageWrapper>
               <Image
                 className={'image'}
-                src="/images/sample/casual/about2.jpg"
+                src={about2}
                 fill={true}
                 alt="More Noodles"
+                priority={true}
+                sizes="(min-width: 768px) 512px, (min-width: 1024px) 1024px, 256px"
               />
             </WideImageWrapper>
 
@@ -175,9 +182,11 @@ export default function CasualRestaurantAbout() {
             <WideImageWrapper>
               <Image
                 className={'image'}
-                src="/images/sample/casual/about3.jpg"
+                src={about3}
                 fill={true}
                 alt="Fire"
+                priority={true}
+                sizes="(min-width: 768px) 512px, (min-width: 1024px) 1024px, 256px"
               />
             </WideImageWrapper>
 
@@ -203,10 +212,12 @@ export default function CasualRestaurantAbout() {
             <SizedImage>
               <Image
                 className={'image'}
-                src="/images/sample/casual/hero.jpg"
+                src={hero}
                 width={300}
                 height={300}
                 alt="Picture of a bowl of ramen"
+                priority={true}
+                sizes="(min-width: 768px) 256px, (min-width: 1024px) 384px, 128px"
               />
             </SizedImage>
           </ContentContainer>

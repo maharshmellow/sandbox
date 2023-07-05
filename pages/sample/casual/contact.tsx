@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import NavBar from '../../../components/sample/casual/NavBar';
 import Image from 'next/image';
 import AzeretFontContainer from '@/components/sample/casual/AzeretFontContainer';
+import divider from '@/public/images/sample/casual/divider.png';
 
 const Container = styled.div`
   border: 20px rgb(255, 229, 0) solid;
@@ -40,16 +41,14 @@ const Title = styled.div`
   }
 `;
 
-const ImageWrapper = styled.div`\
-  padding-top: 100px;
-  width: 100%;
-  max-width: 800px;
-  margin: auto;
+const Subtitle = styled.div`
+  font-size: 25px;
   text-align: center;
-  .image {
-    width: 100% !important;
-    position: relative !important;
-    margin: auto !important;
+  letter-spacing: -0.05em;
+  padding-top: 50px;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
   }
 `;
 
@@ -72,14 +71,6 @@ export default function CasualRestaurantContact() {
         <Container>
           <NavBar />
           <ContentContainer>
-            <ImageWrapper>
-              <Image
-                className={'image'}
-                src="/images/sample/casual/location.png"
-                fill={true}
-                alt="Map with the location of the restaurant"
-              />
-            </ImageWrapper>
             <Title>
               555 Wellington St.
               <br />
@@ -90,10 +81,11 @@ export default function CasualRestaurantContact() {
             <Divider>
               <Image
                 className={'image'}
-                src="/images/sample/casual/divider.png"
+                src={divider}
                 width={100}
                 height={50}
                 alt="Divider"
+                quality={20}
               />
             </Divider>
 
@@ -105,6 +97,15 @@ export default function CasualRestaurantContact() {
               <br />
               Every day
             </Title>
+
+            <Divider>
+              <Image className={'image'} src={divider} width={100} height={50} alt="Divider" />
+            </Divider>
+
+            <br />
+            <br />
+
+            <Subtitle>contact@chottomotto.com</Subtitle>
           </ContentContainer>
         </Container>
       </AzeretFontContainer>
