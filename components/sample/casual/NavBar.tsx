@@ -3,6 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import AzeretFontContainer from './AzeretFontContainer';
+import Image from 'next/image';
+import logo from '@/public/images/sample/casual/logo.png';
 
 const Container = styled.div`
   max-width: 1300px;
@@ -121,7 +123,7 @@ const ModalContent = styled.div`
 export function Logo() {
   return (
     <Link href="/sample/casual">
-      <img className={'logo'} src="/images/sample/casual/logo.png" width={'125px'} alt="Logo" />
+      <Image className={'image'} src={logo} width={'125'} alt="Logo" priority={true} />
     </Link>
   );
 }

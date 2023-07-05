@@ -43,8 +43,8 @@ const Title = styled.div`
 `;
 
 const ImageWrapper = styled.div`
-  display: flex;
-  justifycontent: center;
+  display: block;
+  text-align: center;
   padding-top: 100px;
   .image {
     position: relative !important;
