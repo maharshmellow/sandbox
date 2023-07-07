@@ -107,7 +107,7 @@ export default function CasualRestaurantAbout() {
         <title>Casual Restaurant - About</title>
         <meta name="description" content="Casual Restaurant - About" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/sample/casual/favicon.ico" />
       </Head>
       <AzeretFontContainer>
         <Container>
@@ -124,7 +124,7 @@ export default function CasualRestaurantAbout() {
                 fill={true}
                 alt="Noodles"
                 priority={true}
-                sizes="(min-width: 768px) 512px, (min-width: 1024px) 1024px, 256px"
+                sizes="(min-width: 768px) 768px, (min-width: 1024px) 1024px, 512px"
               />
             </WideImageWrapper>
 
@@ -155,7 +155,7 @@ export default function CasualRestaurantAbout() {
                 fill={true}
                 alt="More Noodles"
                 priority={true}
-                sizes="(min-width: 768px) 512px, (min-width: 1024px) 1024px, 256px"
+                sizes="(min-width: 768px) 768px, (min-width: 1024px) 1024px, 512px"
               />
             </WideImageWrapper>
 
@@ -186,7 +186,7 @@ export default function CasualRestaurantAbout() {
                 fill={true}
                 alt="Fire"
                 priority={true}
-                sizes="(min-width: 768px) 512px, (min-width: 1024px) 1024px, 256px"
+                sizes="(min-width: 768px) 768px, (min-width: 1024px) 1024px, 512px"
               />
             </WideImageWrapper>
 
@@ -213,8 +213,8 @@ export default function CasualRestaurantAbout() {
               <Image
                 className={'image'}
                 src={hero}
-                width={300}
-                height={300}
+                width={200}
+                height={200}
                 alt="Picture of a bowl of ramen"
                 priority={true}
                 sizes="(min-width: 768px) 256px, (min-width: 1024px) 384px, 128px"

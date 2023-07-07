@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import AzeretFontContainer from '@/components/sample/casual/AzeretFontContainer';
 import hero from '@/public/images/sample/casual/hero.jpg';
+import divider from '@/public/images/sample/casual/divider.png';
 
 const Container = styled.div`
   border: 20px rgb(255, 229, 0) solid;
@@ -64,6 +65,12 @@ const Footer = styled.div`
   }
 `;
 
+const Divider = styled.div`\
+  padding-top: 100px;
+  margin: auto;
+  text-align: center;
+`;
+
 export default function CasualRestaurant() {
   return (
     <>
@@ -71,14 +78,14 @@ export default function CasualRestaurant() {
         <title>Casual Restaurant</title>
         <meta name="description" content="Casual Restaurant" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/sample/casual/favicon.ico" />
       </Head>
       <AzeretFontContainer>
         <Container>
           <NavBar />
           <ContentContainer>
             <Title>
-              555 Wellington St.
+              121 Demo St.
               <br />
               Hong Kong
             </Title>
@@ -89,15 +96,37 @@ export default function CasualRestaurant() {
                 fill={true}
                 alt="Picture of a bowl of ramen"
                 priority={true}
-                sizes="(min-width: 768px) 256px, (min-width: 1024px) 384px, 128px" // 128px used if width < 768px
+                sizes="(min-width: 768px) 512px, (min-width: 1024px) 750px, 320px"
               />
             </ImageWrapper>
+
+            <Divider>
+              <Image
+                className={'image'}
+                src={divider}
+                width={100}
+                height={50}
+                alt="Divider"
+                quality={20}
+              />
+            </Divider>
 
             <Title>
               9:00AM - 7:00PM
               <br />
               Every day
             </Title>
+
+            <Divider>
+              <Image
+                className={'image'}
+                src={divider}
+                width={100}
+                height={50}
+                alt="Divider"
+                quality={20}
+              />
+            </Divider>
 
             <Footer>
               Made by <Link href={'https://www.maharsh.net'}>Maharsh Patel</Link> <br />

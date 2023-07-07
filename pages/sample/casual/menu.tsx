@@ -51,11 +51,6 @@ const MenuItems = styled.div`
     column-gap: 10rem;
     grid-template-columns: repeat(2, 1fr);
   }
-
-  // @media (min-width: 1200px) {
-  //   column-gap: 10rem;
-  //   grid-template-columns: repeat(3, 1fr);
-  // }
 `;
 
 const MenuItem = styled.div`
@@ -84,7 +79,7 @@ export default function CasualRestaurantMenu() {
         <title>Casual Restaurant - Menu</title>
         <meta name="description" content="Casual Restaurant - Menu" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/sample/casual/favicon.ico" />
       </Head>
       <AzeretFontContainer>
         <Container>
