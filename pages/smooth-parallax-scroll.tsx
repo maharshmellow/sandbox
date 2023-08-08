@@ -38,7 +38,7 @@ const Gallery = styled.div`
   margin: auto;
   padding: 10px;
 `;
-const Column = styled.div`
+const Column = styled(motion.div)`
   position: relative;
   height: 100%;
   width: calc(100%/3);
@@ -47,7 +47,7 @@ const Column = styled.div`
   gap: 20px; 
   padding: 10px;
 `;
-const ImageContainer = styled(motion.div)`
+const ImageContainer = styled.div`
   height: 100%;
   width: 100%;
 
@@ -65,9 +65,9 @@ export default function SmoothParallaxScrollDemo() {
   })
   // [0, 0] would mean static 
   // [0, 100] would map 0 to 0 and 1 to 100
-  const y = useTransform(scrollYProgress, [0, 1], [0, 2200])
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, 6000])
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, 4000])
+  const y = useTransform(scrollYProgress, [0, 1], [0, 1000])
+  const y2 = useTransform(scrollYProgress, [0, 1], [300, 1200])
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, 1500])
 
   useEffect( () => {
     const lenis = new Lenis()
@@ -92,25 +92,25 @@ export default function SmoothParallaxScrollDemo() {
         <Container>
           <Spacer></Spacer>
 
-          <Gallery>
-              <Column style={{top: '-45%'}}>
+          <Gallery ref={gallery}>
+              <Column style={{top: '-25%', y: y}}>
               {/* ImageContainer is of type motion.div so style is getting passed to that */}
-                <ImageContainer style={{y}}><Image priority src={one} alt="" /></ImageContainer>
-                <ImageContainer style={{y}}><Image priority src={two} alt="" /></ImageContainer>
-                <ImageContainer style={{y}}><Image priority src={three} alt="" /></ImageContainer>
-                <ImageContainer style={{y}}><Image priority src={four} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={one} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={two} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={three} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={four} alt="" /></ImageContainer>
               </Column>
-              <Column style={{top: '-155%'}}>
-                <ImageContainer style={{y: y2}}><Image priority src={five} alt="" /></ImageContainer>
-                <ImageContainer style={{y: y2}}><Image priority src={six} alt="" /></ImageContainer>
-                <ImageContainer style={{y: y2}}><Image priority src={seven} alt="" /></ImageContainer>
-                <ImageContainer style={{y: y2}}><Image priority src={eight} alt="" /></ImageContainer>
+              <Column style={{top: '-25%', y: y2}}>
+                <ImageContainer><Image priority src={five} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={six} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={seven} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={eight} alt="" /></ImageContainer>
               </Column>
-              <Column style={{top: '-90%'}}>
-                <ImageContainer style={{y: y3}}><Image priority src={nine} alt="" /></ImageContainer>
-                <ImageContainer style={{y: y3}}><Image priority src={ten} alt="" /></ImageContainer>
-                <ImageContainer style={{y: y3}}><Image priority src={eleven} alt="" /></ImageContainer>
-                <ImageContainer style={{y: y3}}><Image priority src={twelve} alt="" /></ImageContainer>
+              <Column style={{top: '-25%', y: y3}}>
+                <ImageContainer><Image priority src={nine} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={ten} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={eleven} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={twelve} alt="" /></ImageContainer>
               </Column>
           </Gallery>
 
