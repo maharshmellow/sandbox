@@ -47,7 +47,7 @@ const Column = styled(motion.div)`
   gap: 20px; 
   padding: 10px;
 `;
-const ImageContainer = styled.div`
+const ImageContainer = styled(motion.div)`
   height: 100%;
   width: 100%;
 
@@ -56,7 +56,7 @@ const ImageContainer = styled.div`
   overflow: hidden;
 `
 
-const FakeImage = styled.div`
+const FakeImage = styled(motion.div)`
   width: 500px;
   height: 500px;
   background-color: red;
@@ -76,14 +76,14 @@ export default function SmoothParallaxScrollDemo() {
   const y3 = useTransform(scrollYProgress, [0, 1], [0, 1500])
 
   useEffect( () => {
-    // const lenis = new Lenis()
+    const lenis = new Lenis()
 
-    // const raf = (time: number) => {
-    //   lenis.raf(time)
-    //   requestAnimationFrame(raf)
-    // }
+    const raf = (time: number) => {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
 
-    // requestAnimationFrame(raf);
+    requestAnimationFrame(raf);
   }, [])
 
   return (
@@ -99,20 +99,20 @@ export default function SmoothParallaxScrollDemo() {
           <Spacer></Spacer>
 
           <Gallery ref={gallery}>
-              <Column style={{y: y}} key={'one'}>
+              <Column style={{translateY: y}} key={'one'}>
               {/* ImageContainer is of type motion.div so style is getting passed to that */}
                 <ImageContainer><FakeImage key={1} /></ImageContainer>
                 <ImageContainer><FakeImage key={2} /></ImageContainer>
                 <ImageContainer><FakeImage key={3} /></ImageContainer>
                 <ImageContainer><FakeImage key={4} /></ImageContainer>
               </Column>
-              <Column style={{y: y2}} key={'two'}>
+              <Column style={{translateY: y2}} key={'two'}>
                 <ImageContainer><FakeImage key={5} /></ImageContainer>
                 <ImageContainer><FakeImage key={6} /></ImageContainer>
                 <ImageContainer><FakeImage key={7} /></ImageContainer>
                 <ImageContainer><FakeImage key={8} /></ImageContainer>
               </Column>
-              <Column style={{y: y3}} key={'three'}>
+              <Column style={{translateY: y3}} key={'three'}>
                 <ImageContainer><FakeImage key={9} /></ImageContainer>
                 <ImageContainer><FakeImage key={10} /></ImageContainer>
                 <ImageContainer><FakeImage key={11} /></ImageContainer>
