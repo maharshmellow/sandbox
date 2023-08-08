@@ -1,19 +1,19 @@
 import { useEffect, useState, useRef } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
-import one from '@/public/images/smooth-parallax-scroll/1.jpg';
-import two from '@/public/images/smooth-parallax-scroll/2.jpg';
-import three from '@/public/images/smooth-parallax-scroll/3.jpg';
-import four from '@/public/images/smooth-parallax-scroll/4.jpg';
-import five from '@/public/images/smooth-parallax-scroll/5.jpg';
-import six from '@/public/images/smooth-parallax-scroll/6.jpg';
-import seven from '@/public/images/smooth-parallax-scroll/7.jpg';
-import eight from '@/public/images/smooth-parallax-scroll/8.jpg';
-import nine from '@/public/images/smooth-parallax-scroll/9.jpg';
-import ten from '@/public/images/smooth-parallax-scroll/10.jpg';
-import eleven from '@/public/images/smooth-parallax-scroll/11.jpg';
-import twelve from '@/public/images/smooth-parallax-scroll/12.jpg';
-import Image from 'next/image';
+// import one from '@/public/images/smooth-parallax-scroll/1.jpg';
+// import two from '@/public/images/smooth-parallax-scroll/2.jpg';
+// import three from '@/public/images/smooth-parallax-scroll/3.jpg';
+// import four from '@/public/images/smooth-parallax-scroll/4.jpg';
+// import five from '@/public/images/smooth-parallax-scroll/5.jpg';
+// import six from '@/public/images/smooth-parallax-scroll/6.jpg';
+// import seven from '@/public/images/smooth-parallax-scroll/7.jpg';
+// import eight from '@/public/images/smooth-parallax-scroll/8.jpg';
+// import nine from '@/public/images/smooth-parallax-scroll/9.jpg';
+// import ten from '@/public/images/smooth-parallax-scroll/10.jpg';
+// import eleven from '@/public/images/smooth-parallax-scroll/11.jpg';
+// import twelve from '@/public/images/smooth-parallax-scroll/12.jpg';
+// import Image from 'next/image';
 
 import { useTransform, useScroll, motion } from 'framer-motion';
 import Lenis from '@studio-freight/lenis'
@@ -56,6 +56,12 @@ const ImageContainer = styled.div`
   overflow: hidden;
 `
 
+const FakeImage = styled.div`
+  width: 500px;
+  height: 500px;
+  background-color: red;
+`
+
 export default function SmoothParallaxScrollDemo() {
   const gallery = useRef(null);
 
@@ -95,22 +101,22 @@ export default function SmoothParallaxScrollDemo() {
           <Gallery ref={gallery}>
               <Column style={{top: '-25%', y: y}}>
               {/* ImageContainer is of type motion.div so style is getting passed to that */}
-                <ImageContainer><Image priority src={one} key={1} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={two} key={2} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={three} key={3} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={four} key={4} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={1} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={2} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={3} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={4} alt="" /></ImageContainer>
               </Column>
               <Column style={{top: '-25%', y: y2}}>
-                <ImageContainer><Image priority src={five} key={5} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={six} key={6} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={seven} key={7} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={eight} key={8} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={5} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={6} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={7} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={8} alt="" /></ImageContainer>
               </Column>
               <Column style={{top: '-25%', y: y3}}>
-                <ImageContainer><Image priority src={nine} key={9} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={ten} key={10} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={eleven} key={11} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={twelve} key={12} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={9} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={10} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={11} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={12} alt="" /></ImageContainer>
               </Column>
           </Gallery>
 
