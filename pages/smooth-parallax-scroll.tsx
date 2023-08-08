@@ -72,12 +72,6 @@ export default function SmoothParallaxScrollDemo() {
   // [0, 0] would mean static 
   // [0, 100] would map 0 to 0 and 1 to 100
   const y = useTransform(scrollYProgress, [0, 1], [-500, 500])
-  const yNew = useSpring(y, {
-    stiffness: 10,
-    damping: 10,
-    restDelta: 0.001
-  });
-
   const y2 = useTransform(scrollYProgress, [0, 1], [-800, 900])
   const y3 = useTransform(scrollYProgress, [0, 1], [-200, 200])
 
@@ -105,7 +99,7 @@ export default function SmoothParallaxScrollDemo() {
           <Spacer></Spacer>
 
           <Gallery ref={gallery}>
-              <Column style={{translateY: yNew}} key={'one'}>
+              <Column style={{translateY: y}} key={'one'}>
               {/* ImageContainer is of type motion.div so style is getting passed to that */}
                 <ImageContainer><FakeImage key={1} /></ImageContainer>
                 <ImageContainer><FakeImage key={2} /></ImageContainer>
