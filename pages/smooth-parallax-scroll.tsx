@@ -70,14 +70,14 @@ export default function SmoothParallaxScrollDemo() {
   const y3 = useTransform(scrollYProgress, [0, 1], [0, 1500])
 
   useEffect( () => {
-    const lenis = new Lenis()
+    // const lenis = new Lenis()
 
-    const raf = (time: number) => {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
+    // const raf = (time: number) => {
+    //   lenis.raf(time)
+    //   requestAnimationFrame(raf)
+    // }
 
-    requestAnimationFrame(raf);
+    // requestAnimationFrame(raf);
   }, [])
 
   return (
