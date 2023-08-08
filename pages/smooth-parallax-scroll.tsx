@@ -29,7 +29,7 @@ const Spacer = styled.div`
   background-color: white;
 `;
 const Gallery = styled.div`
-  height: 175vh;
+  height: 100vh;
   max-width: 1500px;
   position: relative;
   display: flex;
@@ -71,9 +71,9 @@ export default function SmoothParallaxScrollDemo() {
   })
   // [0, 0] would mean static 
   // [0, 100] would map 0 to 0 and 1 to 100
-  const y = useTransform(scrollYProgress, [0, 1], [-500, 500])
-  const y2 = useTransform(scrollYProgress, [0, 1], [-800, 900])
-  const y3 = useTransform(scrollYProgress, [0, 1], [-200, 200])
+  const y = useTransform(scrollYProgress, [0, 1], [-100, 100])
+  const y2 = useTransform(scrollYProgress, [0, 1], [-200, 200])
+  const y3 = useTransform(scrollYProgress, [0, 1], [-300, 300])
 
   useEffect( () => {
     const lenis = new Lenis()
