@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import one from '@/public/images/smooth-parallax-scroll/1.jpg';
@@ -15,7 +15,7 @@ import eleven from '@/public/images/smooth-parallax-scroll/11.jpg';
 import twelve from '@/public/images/smooth-parallax-scroll/12.jpg';
 import Image from 'next/image';
 
-// import { useTransform, useScroll, motion } from 'framer-motion';
+import { useTransform, useScroll, motion } from 'framer-motion';
 import Lenis from '@studio-freight/lenis'
 
 
@@ -24,7 +24,10 @@ const Container = styled.div`
   background-color: black;
 `;
 
-const Spacer = styled.div``;
+const Spacer = styled.div`
+  height: 100vh;
+  background-color: white;
+`;
 const Gallery = styled.div`
   height: 175vh;
   max-width: 1500px;
@@ -44,7 +47,7 @@ const Column = styled.div`
   gap: 20px; 
   padding: 10px;
 `;
-const ImageContainer = styled.div`
+const ImageContainer = styled(motion.div)`
   height: 100%;
   width: 100%;
 
@@ -54,6 +57,18 @@ const ImageContainer = styled.div`
 `
 
 export default function SmoothParallaxScrollDemo() {
+  const gallery = useRef(null);
+  const [dimension, setDimension] = useState({width:0, height:0});
+
+  const { scrollYProgress } = useScroll({
+    target: gallery,
+    offset: ['start end', 'end start']
+  })
+  const { height } = dimension;
+  const y = useTransform(scrollYProgress, [0, 1], [0, height * 2])
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.5])
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25])
+
   useEffect( () => {
     const lenis = new Lenis()
 
@@ -62,17 +77,17 @@ export default function SmoothParallaxScrollDemo() {
       requestAnimationFrame(raf)
     }
 
-    // const resize = () => {
-    //   setDimension({width: window.innerWidth, height: window.innerHeight})
-    // }
+    const resize = () => {
+      setDimension({width: window.innerWidth, height: window.innerHeight})
+    }
 
-    // window.addEventListener("resize", resize)
+    window.addEventListener("resize", resize)
     requestAnimationFrame(raf);
-    // resize();
+    resize();
 
-    // return () => {
-    //   window.removeEventListener("resize", resize);
-    // }
+    return () => {
+      window.removeEventListener("resize", resize);
+    }
   }, [])
 
   return (
@@ -88,23 +103,24 @@ export default function SmoothParallaxScrollDemo() {
           <Spacer></Spacer>
 
           <Gallery>
-              <Column>
-                <ImageContainer><Image src={one} alt="" /></ImageContainer>
-                <ImageContainer><Image src={two} alt="" /></ImageContainer>
-                <ImageContainer><Image src={three} alt="" /></ImageContainer>
-                <ImageContainer><Image src={four} alt="" /></ImageContainer>
+              <Column style={{top: '-45%'}}>
+              {/* ImageContainer is of type motion.div so style is getting passed to that */}
+                <ImageContainer style={{y}}><Image priority src={one} alt="" /></ImageContainer>
+                <ImageContainer style={{y}}><Image priority src={two} alt="" /></ImageContainer>
+                <ImageContainer style={{y}}><Image priority src={three} alt="" /></ImageContainer>
+                <ImageContainer style={{y}}><Image priority src={four} alt="" /></ImageContainer>
               </Column>
-              <Column>
-                <ImageContainer><Image src={five} alt="" /></ImageContainer>
-                <ImageContainer><Image src={six} alt="" /></ImageContainer>
-                <ImageContainer><Image src={seven} alt="" /></ImageContainer>
-                <ImageContainer><Image src={eight} alt="" /></ImageContainer>
+              <Column style={{top: '-95%'}}>
+                <ImageContainer style={{y: y2}}><Image priority src={five} alt="" /></ImageContainer>
+                <ImageContainer style={{y: y2}}><Image priority src={six} alt="" /></ImageContainer>
+                <ImageContainer style={{y: y2}}><Image priority src={seven} alt="" /></ImageContainer>
+                <ImageContainer style={{y: y2}}><Image priority src={eight} alt="" /></ImageContainer>
               </Column>
-              <Column>
-                <ImageContainer><Image src={nine} alt="" /></ImageContainer>
-                <ImageContainer><Image src={ten} alt="" /></ImageContainer>
-                <ImageContainer><Image src={eleven} alt="" /></ImageContainer>
-                <ImageContainer><Image src={twelve} alt="" /></ImageContainer>
+              <Column style={{top: '-45%'}}>
+                <ImageContainer style={{y: y3}}><Image priority src={nine} alt="" /></ImageContainer>
+                <ImageContainer style={{y: y3}}><Image priority src={ten} alt="" /></ImageContainer>
+                <ImageContainer style={{y: y3}}><Image priority src={eleven} alt="" /></ImageContainer>
+                <ImageContainer style={{y: y3}}><Image priority src={twelve} alt="" /></ImageContainer>
               </Column>
           </Gallery>
 
