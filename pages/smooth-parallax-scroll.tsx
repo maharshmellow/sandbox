@@ -1,24 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
-// import one from '@/public/images/smooth-parallax-scroll/1.jpg';
-// import two from '@/public/images/smooth-parallax-scroll/2.jpg';
-// import three from '@/public/images/smooth-parallax-scroll/3.jpg';
-// import four from '@/public/images/smooth-parallax-scroll/4.jpg';
-// import five from '@/public/images/smooth-parallax-scroll/5.jpg';
-// import six from '@/public/images/smooth-parallax-scroll/6.jpg';
-// import seven from '@/public/images/smooth-parallax-scroll/7.jpg';
-// import eight from '@/public/images/smooth-parallax-scroll/8.jpg';
-// import nine from '@/public/images/smooth-parallax-scroll/9.jpg';
-// import ten from '@/public/images/smooth-parallax-scroll/10.jpg';
-// import eleven from '@/public/images/smooth-parallax-scroll/11.jpg';
-// import twelve from '@/public/images/smooth-parallax-scroll/12.jpg';
-// import Image from 'next/image';
-
 import { useTransform, useScroll, useSpring, motion } from 'framer-motion';
 import Lenis from '@studio-freight/lenis'
-
-
 
 const Container = styled.div`
   background-color: black;
@@ -72,8 +56,8 @@ export default function SmoothParallaxScrollDemo() {
   // [0, 0] would mean static 
   // [0, 100] would map 0 to 0 and 1 to 100
   const y = useTransform(scrollYProgress, [0, 1], [-100, 100])
-  const y2 = useTransform(scrollYProgress, [0, 1], [-200, 200])
-  const y3 = useTransform(scrollYProgress, [0, 1], [-300, 300])
+  const y2 = useTransform(scrollYProgress, [0, 1], [-300, 300])
+  const y3 = useTransform(scrollYProgress, [0, 1], [-200, 200])
 
   useEffect( () => {
     const lenis = new Lenis()
