@@ -72,8 +72,8 @@ export default function SmoothParallaxScrollDemo() {
   // [0, 0] would mean static 
   // [0, 100] would map 0 to 0 and 1 to 100
   const y = useTransform(scrollYProgress, [0, 1], [0, 1000])
-  const y2 = useTransform(scrollYProgress, [0, 1], [300, 1200])
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, 1500])
+  // const y2 = useTransform(scrollYProgress, [0, 1], [300, 1200])
+  // const y3 = useTransform(scrollYProgress, [0, 1], [0, 1500])
 
   useEffect( () => {
     // const lenis = new Lenis()
@@ -99,20 +99,20 @@ export default function SmoothParallaxScrollDemo() {
           <Spacer></Spacer>
 
           <Gallery ref={gallery}>
-              <Column style={{top: '-25%', y: y}}>
+              <Column style={{y: y}}>
               {/* ImageContainer is of type motion.div so style is getting passed to that */}
                 <ImageContainer><FakeImage key={1} /></ImageContainer>
                 <ImageContainer><FakeImage key={2} /></ImageContainer>
                 <ImageContainer><FakeImage key={3} /></ImageContainer>
                 <ImageContainer><FakeImage key={4} /></ImageContainer>
               </Column>
-              <Column style={{top: '-25%', y: y2}}>
+              <Column style={{y: y}}>
                 <ImageContainer><FakeImage key={5} /></ImageContainer>
                 <ImageContainer><FakeImage key={6} /></ImageContainer>
                 <ImageContainer><FakeImage key={7} /></ImageContainer>
                 <ImageContainer><FakeImage key={8} /></ImageContainer>
               </Column>
-              <Column style={{top: '-25%', y: y3}}>
+              <Column style={{y: y}}>
                 <ImageContainer><FakeImage key={9} /></ImageContainer>
                 <ImageContainer><FakeImage key={10} /></ImageContainer>
                 <ImageContainer><FakeImage key={11} /></ImageContainer>
