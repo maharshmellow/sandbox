@@ -71,9 +71,9 @@ export default function SmoothParallaxScrollDemo() {
   })
   // [0, 0] would mean static 
   // [0, 100] would map 0 to 0 and 1 to 100
-  const y = useTransform(scrollYProgress, [0, 1], [0, 1000])
+  const y = useTransform(scrollYProgress, [0, 1], [300, 1200])
   const y2 = useTransform(scrollYProgress, [0, 1], [300, 1200])
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, 1500])
+  const y3 = useTransform(scrollYProgress, [0, 1], [300, 1200])
 
   useEffect( () => {
     const lenis = new Lenis()
