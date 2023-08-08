@@ -99,20 +99,20 @@ export default function SmoothParallaxScrollDemo() {
           <Spacer></Spacer>
 
           <Gallery ref={gallery}>
-              <Column style={{y: y}}>
+              <Column style={{y: y}} key={'one'}>
               {/* ImageContainer is of type motion.div so style is getting passed to that */}
                 <ImageContainer><FakeImage key={1} /></ImageContainer>
                 <ImageContainer><FakeImage key={2} /></ImageContainer>
                 <ImageContainer><FakeImage key={3} /></ImageContainer>
                 <ImageContainer><FakeImage key={4} /></ImageContainer>
               </Column>
-              <Column style={{y: y2}}>
+              <Column style={{y: y2}} key={'two'}>
                 <ImageContainer><FakeImage key={5} /></ImageContainer>
                 <ImageContainer><FakeImage key={6} /></ImageContainer>
                 <ImageContainer><FakeImage key={7} /></ImageContainer>
                 <ImageContainer><FakeImage key={8} /></ImageContainer>
               </Column>
-              <Column style={{y: y3}}>
+              <Column style={{y: y3}} key={'three'}>
                 <ImageContainer><FakeImage key={9} /></ImageContainer>
                 <ImageContainer><FakeImage key={10} /></ImageContainer>
                 <ImageContainer><FakeImage key={11} /></ImageContainer>
