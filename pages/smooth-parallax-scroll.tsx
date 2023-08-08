@@ -95,22 +95,22 @@ export default function SmoothParallaxScrollDemo() {
           <Gallery ref={gallery}>
               <Column style={{top: '-25%', y: y}}>
               {/* ImageContainer is of type motion.div so style is getting passed to that */}
-                <ImageContainer><Image priority src={one} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={two} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={three} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={four} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={one} key={1} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={two} key={2} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={three} key={3} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={four} key={4} alt="" /></ImageContainer>
               </Column>
               <Column style={{top: '-25%', y: y2}}>
-                <ImageContainer><Image priority src={five} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={six} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={seven} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={eight} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={five} key={5} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={six} key={6} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={seven} key={7} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={eight} key={8} alt="" /></ImageContainer>
               </Column>
               <Column style={{top: '-25%', y: y3}}>
-                <ImageContainer><Image priority src={nine} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={ten} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={eleven} alt="" /></ImageContainer>
-                <ImageContainer><Image priority src={twelve} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={nine} key={9} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={ten} key={10} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={eleven} key={11} alt="" /></ImageContainer>
+                <ImageContainer><Image priority src={twelve} key={12} alt="" /></ImageContainer>
               </Column>
           </Gallery>
 
