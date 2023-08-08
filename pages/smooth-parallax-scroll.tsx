@@ -101,22 +101,22 @@ export default function SmoothParallaxScrollDemo() {
           <Gallery ref={gallery}>
               <Column style={{top: '-25%', y: y}}>
               {/* ImageContainer is of type motion.div so style is getting passed to that */}
-                <ImageContainer><FakeImage key={1} alt="" /></ImageContainer>
-                <ImageContainer><FakeImage key={2} alt="" /></ImageContainer>
-                <ImageContainer><FakeImage key={3} alt="" /></ImageContainer>
-                <ImageContainer><FakeImage key={4} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={1} /></ImageContainer>
+                <ImageContainer><FakeImage key={2} /></ImageContainer>
+                <ImageContainer><FakeImage key={3} /></ImageContainer>
+                <ImageContainer><FakeImage key={4} /></ImageContainer>
               </Column>
               <Column style={{top: '-25%', y: y2}}>
-                <ImageContainer><FakeImage key={5} alt="" /></ImageContainer>
-                <ImageContainer><FakeImage key={6} alt="" /></ImageContainer>
-                <ImageContainer><FakeImage key={7} alt="" /></ImageContainer>
-                <ImageContainer><FakeImage key={8} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={5} /></ImageContainer>
+                <ImageContainer><FakeImage key={6} /></ImageContainer>
+                <ImageContainer><FakeImage key={7} /></ImageContainer>
+                <ImageContainer><FakeImage key={8} /></ImageContainer>
               </Column>
               <Column style={{top: '-25%', y: y3}}>
-                <ImageContainer><FakeImage key={9} alt="" /></ImageContainer>
-                <ImageContainer><FakeImage key={10} alt="" /></ImageContainer>
-                <ImageContainer><FakeImage key={11} alt="" /></ImageContainer>
-                <ImageContainer><FakeImage key={12} alt="" /></ImageContainer>
+                <ImageContainer><FakeImage key={9} /></ImageContainer>
+                <ImageContainer><FakeImage key={10} /></ImageContainer>
+                <ImageContainer><FakeImage key={11} /></ImageContainer>
+                <ImageContainer><FakeImage key={12} /></ImageContainer>
               </Column>
           </Gallery>
 
