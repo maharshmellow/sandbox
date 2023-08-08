@@ -15,7 +15,7 @@ import styled from 'styled-components';
 // import twelve from '@/public/images/smooth-parallax-scroll/12.jpg';
 // import Image from 'next/image';
 
-import { useTransform, useScroll, motion } from 'framer-motion';
+import { useTransform, useScroll, useSpring, motion } from 'framer-motion';
 import Lenis from '@studio-freight/lenis'
 
 
@@ -71,9 +71,15 @@ export default function SmoothParallaxScrollDemo() {
   })
   // [0, 0] would mean static 
   // [0, 100] would map 0 to 0 and 1 to 100
-  const y = useTransform(scrollYProgress, [0, 1], [300, 1200])
-  const y2 = useTransform(scrollYProgress, [0, 1], [300, 1200])
-  const y3 = useTransform(scrollYProgress, [0, 1], [300, 1200])
+  const y = useTransform(scrollYProgress, [0, 1], [-500, 500])
+  const yNew = useSpring(y, {
+    stiffness: 10,
+    damping: 10,
+    restDelta: 0.001
+  });
+
+  const y2 = useTransform(scrollYProgress, [0, 1], [-800, 900])
+  const y3 = useTransform(scrollYProgress, [0, 1], [-200, 200])
 
   useEffect( () => {
     const lenis = new Lenis()
@@ -99,7 +105,7 @@ export default function SmoothParallaxScrollDemo() {
           <Spacer></Spacer>
 
           <Gallery ref={gallery}>
-              <Column style={{translateY: y}} key={'one'}>
+              <Column style={{translateY: yNew}} key={'one'}>
               {/* ImageContainer is of type motion.div so style is getting passed to that */}
                 <ImageContainer><FakeImage key={1} /></ImageContainer>
                 <ImageContainer><FakeImage key={2} /></ImageContainer>
