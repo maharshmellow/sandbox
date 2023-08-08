@@ -58,16 +58,16 @@ const ImageContainer = styled(motion.div)`
 
 export default function SmoothParallaxScrollDemo() {
   const gallery = useRef(null);
-  const [dimension, setDimension] = useState({width:0, height:0});
 
   const { scrollYProgress } = useScroll({
     target: gallery,
     offset: ['start end', 'end start']
   })
-  const { height } = dimension;
-  const y = useTransform(scrollYProgress, [0, 1], [0, height * 2])
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.5])
-  const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25])
+  // [0, 0] would mean static 
+  // [0, 100] would map 0 to 0 and 1 to 100
+  const y = useTransform(scrollYProgress, [0, 1], [0, 2200])
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, 6000])
+  const y3 = useTransform(scrollYProgress, [0, 1], [0, 4000])
 
   useEffect( () => {
     const lenis = new Lenis()
@@ -77,17 +77,7 @@ export default function SmoothParallaxScrollDemo() {
       requestAnimationFrame(raf)
     }
 
-    const resize = () => {
-      setDimension({width: window.innerWidth, height: window.innerHeight})
-    }
-
-    window.addEventListener("resize", resize)
     requestAnimationFrame(raf);
-    resize();
-
-    return () => {
-      window.removeEventListener("resize", resize);
-    }
   }, [])
 
   return (
@@ -110,13 +100,13 @@ export default function SmoothParallaxScrollDemo() {
                 <ImageContainer style={{y}}><Image priority src={three} alt="" /></ImageContainer>
                 <ImageContainer style={{y}}><Image priority src={four} alt="" /></ImageContainer>
               </Column>
-              <Column style={{top: '-95%'}}>
+              <Column style={{top: '-155%'}}>
                 <ImageContainer style={{y: y2}}><Image priority src={five} alt="" /></ImageContainer>
                 <ImageContainer style={{y: y2}}><Image priority src={six} alt="" /></ImageContainer>
                 <ImageContainer style={{y: y2}}><Image priority src={seven} alt="" /></ImageContainer>
                 <ImageContainer style={{y: y2}}><Image priority src={eight} alt="" /></ImageContainer>
               </Column>
-              <Column style={{top: '-45%'}}>
+              <Column style={{top: '-90%'}}>
                 <ImageContainer style={{y: y3}}><Image priority src={nine} alt="" /></ImageContainer>
                 <ImageContainer style={{y: y3}}><Image priority src={ten} alt="" /></ImageContainer>
                 <ImageContainer style={{y: y3}}><Image priority src={eleven} alt="" /></ImageContainer>
