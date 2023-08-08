@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import one from '@/public/images/smooth-parallax-scroll/1.jpg';
@@ -13,6 +14,10 @@ import ten from '@/public/images/smooth-parallax-scroll/10.jpg';
 import eleven from '@/public/images/smooth-parallax-scroll/11.jpg';
 import twelve from '@/public/images/smooth-parallax-scroll/12.jpg';
 import Image from 'next/image';
+
+// import { useTransform, useScroll, motion } from 'framer-motion';
+import Lenis from '@studio-freight/lenis'
+
 
 
 const Container = styled.div`
@@ -42,12 +47,34 @@ const Column = styled.div`
 const ImageContainer = styled.div`
   height: 100%;
   width: 100%;
+
   position: relative;
   border-radius: 1vw;
   overflow: hidden;
 `
 
 export default function SmoothParallaxScrollDemo() {
+  useEffect( () => {
+    const lenis = new Lenis()
+
+    const raf = (time: number) => {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    // const resize = () => {
+    //   setDimension({width: window.innerWidth, height: window.innerHeight})
+    // }
+
+    // window.addEventListener("resize", resize)
+    requestAnimationFrame(raf);
+    // resize();
+
+    // return () => {
+    //   window.removeEventListener("resize", resize);
+    // }
+  }, [])
+
   return (
     <>
       <Head>
