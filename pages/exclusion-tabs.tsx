@@ -45,6 +45,8 @@ const TabButton = styled.button`
   cursor: pointer;
   padding: 0.5rem 1rem;
   position: relative; // to make the Pill absolute position work
+
+  -webkit-appearance: none;
 `;
 
 const Pill = styled(motion.div)`
