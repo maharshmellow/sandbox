@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { useTransform, useScroll, useSpring, motion } from 'framer-motion';
-import Lenis from '@studio-freight/lenis'
+import Lenis from '@studio-freight/lenis';
 
 const Container = styled.div`
   background-color: black;
@@ -25,10 +25,10 @@ const Gallery = styled.div`
 const Column = styled(motion.div)`
   position: relative;
   height: 100%;
-  width: calc(100%/3);
+  width: calc(100% / 3);
   display: flex;
   flex-direction: column;
-  gap: 20px; 
+  gap: 20px;
   padding: 10px;
 `;
 const ImageContainer = styled(motion.div)`
@@ -38,37 +38,41 @@ const ImageContainer = styled(motion.div)`
   position: relative;
   border-radius: 1vw;
   overflow: hidden;
-`
+`;
 
 const FakeImage = styled(motion.div)`
   width: 500px;
   height: 500px;
   background-color: red;
-`
+`;
 
 export default function SmoothParallaxScrollDemo() {
   const gallery = useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: gallery,
-    offset: ['start end', 'end start']
-  })
-  // [0, 0] would mean static 
+    offset: ['start end', 'end start'],
+  });
+  // [0, 0] would mean static
   // [0, 100] would map 0 to 0 and 1 to 100
-  const y = useTransform(scrollYProgress, [0, 1], [-100, 100])
-  const y2 = useTransform(scrollYProgress, [0, 1], [-300, 300])
-  const y3 = useTransform(scrollYProgress, [0, 1], [-200, 200])
+  const y = useTransform(scrollYProgress, [0, 1], [-100, 100]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [-300, 300]);
+  const y3 = useTransform(scrollYProgress, [0, 1], [-200, 200]);
 
-  useEffect( () => {
-    const lenis = new Lenis()
+  useEffect(() => {
+    const lenis = new Lenis();
 
     const raf = (time: number) => {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
 
     requestAnimationFrame(raf);
-  }, [])
+
+    return () => {
+      lenis?.destroy();
+    };
+  }, []);
 
   return (
     <>
@@ -83,25 +87,49 @@ export default function SmoothParallaxScrollDemo() {
           <Spacer></Spacer>
 
           <Gallery ref={gallery}>
-              <Column style={{translateY: y}} key={'one'}>
+            <Column style={{ translateY: y }} key={'one'}>
               {/* ImageContainer is of type motion.div so style is getting passed to that */}
-                <ImageContainer><FakeImage key={1} /></ImageContainer>
-                <ImageContainer><FakeImage key={2} /></ImageContainer>
-                <ImageContainer><FakeImage key={3} /></ImageContainer>
-                <ImageContainer><FakeImage key={4} /></ImageContainer>
-              </Column>
-              <Column style={{translateY: y2}} key={'two'}>
-                <ImageContainer><FakeImage key={5} /></ImageContainer>
-                <ImageContainer><FakeImage key={6} /></ImageContainer>
-                <ImageContainer><FakeImage key={7} /></ImageContainer>
-                <ImageContainer><FakeImage key={8} /></ImageContainer>
-              </Column>
-              <Column style={{translateY: y3}} key={'three'}>
-                <ImageContainer><FakeImage key={9} /></ImageContainer>
-                <ImageContainer><FakeImage key={10} /></ImageContainer>
-                <ImageContainer><FakeImage key={11} /></ImageContainer>
-                <ImageContainer><FakeImage key={12} /></ImageContainer>
-              </Column>
+              <ImageContainer>
+                <FakeImage key={1} />
+              </ImageContainer>
+              <ImageContainer>
+                <FakeImage key={2} />
+              </ImageContainer>
+              <ImageContainer>
+                <FakeImage key={3} />
+              </ImageContainer>
+              <ImageContainer>
+                <FakeImage key={4} />
+              </ImageContainer>
+            </Column>
+            <Column style={{ translateY: y2 }} key={'two'}>
+              <ImageContainer>
+                <FakeImage key={5} />
+              </ImageContainer>
+              <ImageContainer>
+                <FakeImage key={6} />
+              </ImageContainer>
+              <ImageContainer>
+                <FakeImage key={7} />
+              </ImageContainer>
+              <ImageContainer>
+                <FakeImage key={8} />
+              </ImageContainer>
+            </Column>
+            <Column style={{ translateY: y3 }} key={'three'}>
+              <ImageContainer>
+                <FakeImage key={9} />
+              </ImageContainer>
+              <ImageContainer>
+                <FakeImage key={10} />
+              </ImageContainer>
+              <ImageContainer>
+                <FakeImage key={11} />
+              </ImageContainer>
+              <ImageContainer>
+                <FakeImage key={12} />
+              </ImageContainer>
+            </Column>
           </Gallery>
 
           <Spacer></Spacer>
