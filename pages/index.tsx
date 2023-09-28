@@ -4,20 +4,16 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   padding: 100px;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const StyledLink = styled.div`
   font-family: var(--font-mono);
-  padding: 20px;
-  transition: 0.2s;
+  padding: 10px;
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-rgb));
-
-  &:hover {
-    color: rgb(var(--background-rgb));
-    background-color: rgb(var(--foreground-rgb));
-    scale: 1.02;
-  }
 `;
 
 export default function Home() {

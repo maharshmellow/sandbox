@@ -34,7 +34,7 @@ const TabsContainer = styled.div`
   gap: 26px;
 `;
 
-const TabButton = styled.button`
+const TabButton = styled.button<{ isActiveTab: boolean }>`
   // clear default button style
   color: black;
   outline: none;
@@ -49,6 +49,11 @@ const TabButton = styled.button`
   position: relative; // to make the Pill absolute position work
 
   -webkit-appearance: none;
+
+  &:hover {
+    // only change the hover colour for the active tab otherwise it looks weird
+    color: ${(props) => (props.isActiveTab ? 'black' : '#7f7f7f')};
+  }
 `;
 
 const Pill = styled(motion.div)`
@@ -63,7 +68,6 @@ const Pill = styled(motion.div)`
   // top: 0;
   // bottom: 0;
 
-  border-radius: 9999px;
   mix-blend-mode: exclusion;
   z-index: 10;
 `;
@@ -76,10 +80,11 @@ export function ExclusionTabs() {
   return (
     <TabsContainer>
       {tabs.map((tabName) => {
+        const isActiveTab = activeTab === tabName;
         return (
-          <TabButton onClick={() => setActiveTab(tabName)} key={tabName}>
+          <TabButton onClick={() => setActiveTab(tabName)} key={tabName} isActiveTab={isActiveTab}>
             {/* Pill is a motion.div component */}
-            {activeTab === tabName && (
+            {isActiveTab && (
               <Pill
                 // just keep this id consistent and framer motion will automatically animate the transition
                 layoutId={'pill'}
