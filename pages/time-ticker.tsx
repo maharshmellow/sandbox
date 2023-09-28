@@ -7,16 +7,17 @@ type TickerProps = {
 };
 
 const Card = styled.div`
-  max-width: 600px;
+  // max-width: 1400px;
   min-width: 300px;
   // height: 20vh;
   // background-color: rgb(var(--foreground-rgb));
-  border: 1px solid rgb(var(--foreground-rgb));
+  border: 2px solid rgb(var(--foreground-rgb));
 
   border-radius: 10px;
   margin: auto;
   margin-top: 300px;
-  padding: 20px;
+  margin: 20px;
+  // padding: 20px;
   overflow: hidden;
   position: relative;
 
@@ -27,16 +28,14 @@ const Card = styled.div`
 
 const TickerContainer = styled.div`
   display: flex;
-  height: 8px;
-  margin-left: 5px;
-  margin-right: 5px;
-  // justify-content: space-between;
+  height: 10px;
+  margin-left: 6px;
+  margin-right: 6px;
+  justify-content: space-between;
 `;
 
 const Ticker = styled.div<TickerProps>`
-  // border-left: 1px solid rgb(var(--foreground-rgb));
   border-left: ${(props) => (props.hourMark ? '1px solid #000000' : '1px solid #afafaf')};
-  width: calc(1.0309278%); // 100 / 97 = 1.0309278 -> number of ticks in the day
 `;
 
 const TickerLabelContainer = styled.div`
@@ -44,7 +43,7 @@ const TickerLabelContainer = styled.div`
   justify-content: space-between;
   font-size: 12px;
   line-height: 16px;
-  font-weight: 500px;
+  font-weight: 500;
 `;
 const TickerLabel = styled.div``;
 
@@ -55,9 +54,12 @@ const TimeSelectorBar = styled.div`
   background-color: black;
   height: 100%;
   position: absolute;
-  right: calc(4.3% + 97 * 0.94226804%); // (95.7% - 4.3%) / 97 stops = 0.94226804%
-  transform: translateX(50%);
-  // left: calc(20px + 16 * 5.6391753px); // 572px - 25px = 547px / 97 steps = 5.6391753px
+  // right: calc(4.3% + 97 * 0.94226804%); // (95.7% - 4.3%) / 97 stops = 0.94226804%
+  // left: calc(100% - 20px - 8px);
+  // 100% - 20px - 8px - 1px = position of last bar including 3px for the width of the bar
+  // 20px + 6px = position of first bar
+  // 96 = number of ticks - 1 (in the calculation, first bar is index 0, 97bar is index 96)
+  left: calc((20px + 6px) + 55 * (((100% - 20px - 6px - 1px) - (20px + 6px)) / 96));
 `;
 
 const DummyContent = styled.div`
@@ -68,8 +70,7 @@ const TimeContainer = styled.div`
   position: absolute;
   right: 20px;
   left: 20px;
-  bottom: 16px;
-  // background-color: red;
+  bottom: 20px;
 `;
 
 export function Tickers() {
@@ -87,15 +88,11 @@ export function TickerLabels() {
 
   return (
     <TickerLabelContainer>
-      {labels.map((label) => (
-        <TickerLabel key={label}>{label}</TickerLabel>
+      {labels.map((label, index) => (
+        <TickerLabel key={`${label}_${index}`}>{label}</TickerLabel>
       ))}
     </TickerLabelContainer>
   );
-}
-
-export function TimeSelector() {
-  return <TimeSelectorBar />;
 }
 
 export default function TimeTickerDemo() {
@@ -109,7 +106,7 @@ export default function TimeTickerDemo() {
       </Head>
       <main>
         <Card>
-          <TimeSelector />
+          <TimeSelectorBar />
           <DummyContent />
           <TimeContainer>
             <Tickers />
