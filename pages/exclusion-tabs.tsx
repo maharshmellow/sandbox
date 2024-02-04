@@ -37,7 +37,6 @@ const TabsContainer = styled.div`
 const TabButton = styled.button<{ isActiveTab: boolean }>`
   // clear default button style
   color: black;
-  outline: none;
   background-color: transparent;
   border: none;
 
