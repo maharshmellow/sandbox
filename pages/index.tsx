@@ -41,6 +41,9 @@ export default function Home() {
         <Link href="/exclusion-tabs" passHref>
           <StyledLink>Exclusion Tabs</StyledLink>
         </Link>
+        {/* <Link href="/zoom-parallax" passHref>
+          <StyledLink>Zoom Parallax</StyledLink>
+        </Link> */}
         <Link href="/404" passHref>
           <StyledLink>404 Page</StyledLink>
         </Link>

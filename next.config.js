@@ -5,6 +5,15 @@ const nextConfig = {
     locales: ['en'],
     defaultLocale: 'en',
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'via.placeholder.com',
+        port: '',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;
