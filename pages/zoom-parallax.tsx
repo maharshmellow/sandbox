@@ -64,15 +64,19 @@ export default function ZoomParallaxDemo() {
         scale: scale,
         gridColumn: '4 / span 6',
         gridRow: '6 / span 14',
-        // transformOrigin: '50vw 50vh',
-        translateX: left,
+        transformOrigin: '50vw 50vh',
+        // translateX: left,
       },
     },
     {
       url: 'https://via.placeholder.com/900x1000',
       style: {
+        // we have a grid of 30x30
+        // it is 1 indexed so it ranges from 1-31
+        // to make the box centererd. we need to use indices 11-21
+        // to make it scale to full viewport, we need to set the scale to 3+ because it's around 1/3 of the viewport at the beginning
         gridColumn: '11 / span 10',
-        gridRow: '11 / span 9',
+        gridRow: '11 / span 10',
         scale: scale,
         border: '1px solid red',
         'z-index': '100',
@@ -82,48 +86,45 @@ export default function ZoomParallaxDemo() {
       url: 'https://via.placeholder.com/300x700',
       style: {
         gridColumn: '22 / span 7',
-        gridRow: '11 / span 9',
+        gridRow: '11 / span 10',
         scale: scale,
-        translateX: right,
+        transformOrigin: '-43vw 5vw',
       },
     },
     {
       url: 'https://via.placeholder.com/400x700',
       style: {
         gridColumn: '11 / span 12',
-        gridRow: '2 / span 8',
+        gridRow: '3 / span 7',
         scale: scale,
-        translateY: up,
-        // transformOrigin: '50vw 50vh',
+        transformOrigin: '20vw 60vh',
       },
     },
     {
       url: 'https://via.placeholder.com/300x700',
       style: {
         gridColumn: '3 / span 10',
-        gridRow: '21 / span 7',
+        gridRow: '22 / span 7',
         scale: scale,
-        translateX: left,
-        translateY: down,
+        transformOrigin: '53vw -30vw',
       },
     },
     {
       url: 'https://via.placeholder.com/300x700',
       style: {
         gridColumn: '14 / span 8',
-        gridRow: '21 / span 7',
+        gridRow: '22 / span 7',
         scale: scale,
-        translateY: down,
+        transformOrigin: '-10vw -60vh',
       },
     },
     {
       url: 'https://via.placeholder.com/300x700',
       style: {
         gridColumn: '23 / span 4',
-        gridRow: '21 / span 4',
+        gridRow: '22 / span 4',
         scale: scale,
-        translateX: right,
-        translateY: down,
+        transformOrigin: '-63vw -43vh',
       },
     },
     // {
