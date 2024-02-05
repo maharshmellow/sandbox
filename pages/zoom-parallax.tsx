@@ -52,11 +52,6 @@ export default function ZoomParallaxDemo() {
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 3]);
 
-  const up = useTransform(scrollYProgress, [0, 1], [0, -500]);
-  const right = useTransform(scrollYProgress, [0, 1], [0, 500]);
-  const left = useTransform(scrollYProgress, [0, 1], [0, -500]);
-  const down = useTransform(scrollYProgress, [0, 1], [0, 500]);
-
   const images = [
     {
       url: 'https://via.placeholder.com/600x800',
@@ -106,7 +101,7 @@ export default function ZoomParallaxDemo() {
         gridColumn: '3 / span 10',
         gridRow: '22 / span 7',
         scale: scale,
-        transformOrigin: '53vw -30vw',
+        transformOrigin: '70vw -30vw',
       },
     },
     {
@@ -127,59 +122,6 @@ export default function ZoomParallaxDemo() {
         transformOrigin: '-63vw -43vh',
       },
     },
-    // {
-    //   url: 'https://via.placeholder.com/200x500',
-    //   style: {
-    //     gridColumn: '20 / span 7',
-    //     gridRow: '13 / span 10',
-    //     scale: scale,
-    //     translateX: right,
-    //   },
-    // },
-    // {
-    //   url: 'https://via.placeholder.com/200x500',
-    //   style: {
-    //     gridColumn: '20 / span 13',
-    //     gridRow: '20 / span 13',
-    //     scale: scale,
-    //     translateX: right,
-    //   },
-    // },
-    // {
-    //   url: 'https://via.placeholder.com/300x700',
-    //   scale: scale,
-    //   style: {
-    //     top: '-100px',
-    //   },
-    // },
-    // {
-    //   url: 'https://via.placeholder.com/800x600',
-    //   scale: scale,
-    //   style: {
-    //     top: '-100px',
-    //   },
-    // },
-    // {
-    //   url: 'https://via.placeholder.com/250x350',
-    //   scale: scale,
-    //   style: {
-    //     top: '-100px',
-    //   },
-    // },
-    // {
-    //   url: 'https://via.placeholder.com/500x600',
-    //   scale: scale,
-    //   style: {
-    //     top: '-100px',
-    //   },
-    // },
-    // {
-    //   url: 'https://via.placeholder.com/400x400',
-    //   scale: scale,
-    //   style: {
-    //     top: '-100px',
-    //   },
-    // },
   ];
 
   return (
@@ -208,17 +150,6 @@ export default function ZoomParallaxDemo() {
                   </ImageWrapper>
                 );
               })}
-              {/* <ImageContainer style={{ scale }}>
-                <ImageWrapper>
-                  <Image
-                    src="https://via.placeholder.com/1000x1000"
-                    fill
-                    alt="image"
-                    placeholder="blur"
-                    blurDataURL="https://via.placeholder.com/2x1"
-                  />
-                </ImageWrapper>
-              </ImageContainer> */}
             </ImageStickySection>
           </Container>
           <Spacer />
